@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body_class %}energy_totals-background{% endblock %}
+
+{% block content %}
+  <h1>Totale di energia prodotta e consumata</h1>
+  <table class="table table-hover custom-margin energy_totals">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Energia prodotta</th>
+        <th>Energia consumata</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Totale</th>
+        <td>{{ total_produced }}</td>
+        <td>{{ total_consumed }}</td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}

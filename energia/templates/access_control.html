@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body_class %}access_control-background{% endblock %}
+
+{% block content %}
+  <h1 class="title">Controllo accessi</h1>
+    <div class="table-container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Data e ora</th>
+                    <th>Admin</th>
+                    <th>Indirizzo IP</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in logs %}
+                <tr>
+                    <td>{{ log.login_time }}</td>
+                    <td>{{ log.admin_user }}</td>
+                    <td>{{ log.last_ip_address }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

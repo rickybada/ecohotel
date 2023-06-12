@@ -1,0 +1,328 @@
+/*-------------------------------------------------------------
+/* Font setup */
+/*-------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* Importa il foglio di stile per il font dalla libreria Google Fonts */
+
+/* Impostazione del font */
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #21130d;
+    /* Imposta il font per i titoli e il testo del corpo del documento */
+}
+
+
+/*-------------------------------------------------------------
+/* Color setup */
+/*-------------------------------------------------------------*/
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.home-background {
+    background: url('/static/icons/landingpage_ecohotel.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.insert_energy-background {
+    background: url('/static/icons/sfondo_link_insdati.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.access_control-background {
+    background: url('/static/icons/sfondo_link_accessi.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.energy_totals-background {
+    background: url('/static/icons/sfondo_link_energia_totale.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.energy-background {
+    background: url('/static/icons/sfondo_link_energia.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.logout-background {
+    background: url('/static/icons/sfondo_link_logout.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login-background {
+    background: url('/static/icons/sfondo_link_login.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navbar {
+    background-color: transparent !important; /* Utilizza !important per sovrascrivere eventuali altre regole CSS */
+    box-shadow: none; /* Rimuove l'ombra */
+    border: none; /* Rimuove il bordo */
+    padding: 2rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    /* Imposta il padding, la visualizzazione e la distribuzione dello spazio tra gli elementi nella navbar */
+}
+
+.navbar-brand {
+    margin-right: auto;
+    /* Imposta il margine a destra per il logo nella navbar */
+}
+
+.navbar-nav {
+    margin-left: auto;
+    /* Imposta il margine a sinistra per gli elementi nella navbar */
+}
+
+.navbar-nav .nav-link {
+    margin-right: 41px;
+    font-size: 16px;
+    font-weight: bold;
+    /* Imposta il margine destro e la dimensione del carattere per i link nella navbar */
+}
+
+.nav-item.active .nav-link {
+
+    /* Imposta lo stile per il link attivo nella navbar */
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    font-weight: bold;
+    color: #21130d;
+    position: relative;
+}
+
+.navbar-nav .nav-item:nth-child(1).active .nav-link::before {
+    left: 6px;
+    width: 80%;
+    /* Imposta le coordinate specifiche per il primo link attivo */
+}
+
+.navbar-nav .nav-item:nth-child(2).active .nav-link::before {
+    left: 6px;
+    width: 84%;
+    /* Imposta le coordinate specifiche per il secondo link attivo */
+}
+
+.navbar-nav .nav-item.active .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 4px;
+    width: 93%;
+    height: 3px;
+    background-color: #21130d;
+    transform: translateY(-6px);
+}
+
+.navbar-nav .nav-item.active .nav-link .custom-button:hover {
+    background-color: transparent;
+    color: #21130d;
+    box-shadow: 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    text-align: center;
+    /* Imposta la larghezza massima, il margine e l'allineamento del testo per i contenitori */
+}
+
+.table {
+    width: 100%;
+    color: #212529;
+    /* Imposta la larghezza, il margine inferiore e il colore del testo per le tabelle */
+}
+
+.table,
+.table-container {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    /* Imposta il padding, l'allineamento verticale */
+}
+
+.table-container {
+    max-height: 500px;
+    overflow-y: auto;
+    /* Imposta l'altezza massima e lo scroll verticale per la tabella contenitore */
+}
+
+.table-container-energy {
+    height: 550px !important;
+    overflow-y: auto !important;
+    max-height: 500px !important;
+    /* Imposta l'altezza massima e lo scroll verticale per la tabella contenitore */
+}
+
+table tr:last-child td {
+    border-bottom-style: none !important;
+}
+
+.energy_totals tbody tr:last-child th {
+    border-bottom-style: none !important;
+}
+
+.truncate-text {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy-text {
+  cursor: pointer;
+}
+
+.btn {
+    color: #000000;
+    background-color: #B7EF83;
+    border: none;
+    text-decoration: none;
+    /* Imposta il padding, i colori di sfondo e del testo, i bordi e la decorazione del testo per i pulsanti */
+}
+
+.btn:hover {
+    background-color: #63E432;
+    /* Imposta il colore di sfondo quando il cursore passa sopra ai pulsanti */
+}
+
+.custom-button {
+    background-color: transparent;
+    color: #21130d;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.custom-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+    transform: translateY(100%);
+    transition: transform 0.3s;
+    color: #21130d;
+}
+
+.custom-button:hover::before {
+    color: #21130d;
+    transform: translateY(0);
+    background-color: transparent;
+}
+
+.alert {
+    padding: 20px;
+    color: #fff;
+    background-color: #f44336;
+    margin-bottom: 15px;
+    /* Imposta il padding, i colori di sfondo e del testo, e il margine inferiore per gli avvisi */
+}
+
+.custom-margin {
+  margin-top: 70px; /* Imposta il margine superiore desiderato */
+}
+
+.title {
+  margin-bottom: 70px;
+}
+
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-container .login-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 50px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container h2 {
+  font-size: 2em;
+  color: #162938;
+  margin-bottom: 70px;
+  margin-top: 0; /* Rimuovi la spaziatura superiore per il titolo */
+
+}
+
+.login-container .login-form h2 {
+    font-size: 2em;
+    color: #162938;
+    margin-top: -10px; /* Aggiungi una spaziatura superiore per separare il titolo dalla form */
+}
+
+.form-group {
+    width: 100%;
+    height: 70px;
+}
+
+.login-container .form-group {
+  transform: translateY(-30px);
+}
+
+.copy-text {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.copy-text:hover {
+  color: blue;
+}
+
+

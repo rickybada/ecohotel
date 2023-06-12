@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block body_class %}insert_energy-background{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center">Inserisci i valori di energia prodotta e consumata</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-6 custom-margin">
+      <form method="post" action="{% url 'insert_energy' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="energia_prodotta" class="form-label"></label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="energia_prodotta" name="produced_energy_in_watt" placeholder="Energia prodotta" aria-describedby="energia_prodotta-addon2" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <span class="input-group-text" id="energia_prodotta-addon2">watt</span>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="energia_consumata" class="form-label"></label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="energia_consumata" name="consumed_energy_in_watt" placeholder="Energia consumata" aria-describedby="energia_consumata-addon2" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <span class="input-group-text" id="energia_consumata-addon2">watt</span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Invia</button>
+      </form>
+      <form method="post" action="{% url 'insert_energy' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <small class="d-block text-center my-4 custom-margin">Oppure inserisci direttamente il file JSON</small>
+        <div class="input-group">
+          <input type="file" class="form-control" id="inputGroupFile04" name="file" aria-describedby="inputGroupFileAddon04" accept=".json" aria-label="Upload">
+          <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Invia file</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

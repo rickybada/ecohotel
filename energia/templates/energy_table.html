@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block body_class %}energy-background{% endblock %}
+
+{% block content %}
+<h1>Valori di energia prodotta e consumata</h1>
+<div class="container custom-margin">
+    <div class="table-container-energy">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Data e ora</th>
+                    <th>Energia prodotta (W)</th>
+                    <th>Energia consumata (W)</th>
+                    <th>Hash</th>
+                    <th>Transazione</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for energy in energy %}
+                <tr>
+                    <td>{{ energy.created_at }}</td>
+                    <td>{{ energy.produced_energy_in_watt }}</td>
+                    <td>{{ energy.consumed_energy_in_watt }}</td>
+                    <td>
+                      <div class="truncate-text">
+                        <span class="copy-text" title="{{ energy.hash }}">{{ energy.hash }}</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="truncate-text">
+                        <span class="copy-text" title="{{ energy.txId }}">{{ energy.txId }}</span>
+                      </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

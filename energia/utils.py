@@ -1,8 +1,9 @@
-# Questa funzione prende un messaggio come argomento, lo converte in formato byte e lo invia come parte di una
-# transazione Ethereum sulla rete Goerli. La transazione viene firmata utilizzando una chiave privata specificata e
-# l'hash esadecimale della transazione viene restituito come risultato.
+# This function takes a message as an argument, converts it to byte format, and sends it as part of an
+# Ethereum transaction on the Goerli network. The transaction is signed using a specified private key, and the
+# hexadecimal hash of the transaction is returned as the result.
 
 from web3 import Web3
+
 
 def send_transaction(message):
     w3 = Web3(Web3.HTTPProvider('https://sepolia.infura.io/v3/9e9789a285bd4fdb80c4d5dfc97cb246'))

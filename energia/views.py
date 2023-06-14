@@ -14,10 +14,12 @@ from django.http import HttpResponseBadRequest, HttpResponse
 import hashlib
 
 
+# Renders the 'home.html' template for the home page
 def home(request):
     return render(request, 'home.html')
 
 
+# Authenticates a user based on the provided form data
 def authenticate_user(request, form):
     if form.is_valid():
         username = form.cleaned_data.get('username')
@@ -31,14 +33,15 @@ def authenticate_user(request, form):
     return None
 
 
+# Redirects a user to the next page or the home page
 def redirect_user(request, user):
     next_page = request.GET.get('next')
-    if next_page and next_page != reverse('logout'):  # aggiunge un controllo per evitare la redirezione alla pagina
-        # di logout
+    if next_page and next_page != reverse('logout'):  # Adds a check to avoid redirection to the logout page
         return redirect(next_page)
     return redirect('home')
 
 
+# Checks if the user has admin access and logs the admin access details
 def check_admin_access(request, user):
     if user.is_superuser:
         current_admin = request.user.username
@@ -60,6 +63,7 @@ def check_admin_access(request, user):
         admin_log.save()
 
 
+# Handles the login view
 def login_view(request):
     if request.method == 'POST':
         form = CustomAuthenticationForm(request, data=request.POST)
@@ -72,29 +76,33 @@ def login_view(request):
     return render(request, 'login.html', {'form': form})
 
 
+# Logs out the user and renders the 'logout.html' template
 def logout_view(request):
     logout(request)
     return render(request, 'logout.html')
 
 
+# Displays an energy table for logged-in users
 @login_required
 def energy_table(request):
-    # recupera dal database gli oggetti Energy ordinati per data di creazione in ordine decrescente
+    # Retrieves Energy objects from the database, ordered by creation date in descending order
     energy = Energy.objects.order_by('-created_at')
-    # renderizza la pagina energy_table.html passando come contesto l'oggetto energy
+    # Renders the 'energy_table.html' template, passing the energy objects as context
     return render(request, 'energy_table.html', {'energy': energy})
 
 
+# Displays energy totals for logged-in superusers
 @login_required
 @user_passes_test(lambda u: u.is_superuser)
 def energy_totals(request):
-    # recupera dal database la somma dei valori di energia prodotta e consumata
+    # Retrieves the sum of produced and consumed energy values from the database
     total_produced = Energy.objects.aggregate(Sum('produced_energy_in_watt'))['produced_energy_in_watt__sum']
     total_consumed = Energy.objects.aggregate(Sum('consumed_energy_in_watt'))['consumed_energy_in_watt__sum']
-    # renderizza la pagina energy_totals.html passando come contesto i totali di energia prodotta e consumata
+    # Renders the 'energy_totals.html' template, passing the total produced and consumed energy as context
     return render(request, 'energy_totals.html', {'total_produced': total_produced, 'total_consumed': total_consumed})
 
 
+# Handles the energy insertion view for logged-in superusers
 @login_required
 @user_passes_test(lambda u: u.is_superuser)
 def insert_energy(request):
@@ -103,7 +111,6 @@ def insert_energy(request):
         file_form = FileUploadForm(request.POST, request.FILES)
 
         if file_form.is_valid():
-            print('entro in file form is valid')
             file = file_form.cleaned_data['file']
             try:
                 data = json.load(file)
@@ -133,6 +140,7 @@ def insert_energy(request):
     return render(request, 'insert_energy.html', {'energy_form': energy_form, 'file_form': file_form})
 
 
+# Handles the access control view for logged-in superusers
 @login_required
 @user_passes_test(lambda u: u.is_superuser)
 def access_control(request):
@@ -140,6 +148,7 @@ def access_control(request):
     return render(request, 'access_control.html', {'logs': logs})
 
 
+# Handles the file insertion view
 def insert_file_view(request):
     if request.method == 'POST':
         form = FileUploadForm(request.POST, request.FILES)

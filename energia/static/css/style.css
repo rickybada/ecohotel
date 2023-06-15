@@ -3,14 +3,15 @@
 /*-------------------------------------------------------------*/
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-/* Import the stylesheet for the font from the Google Fonts library */
+/* Importa il foglio di stile per il font dalla libreria Google Fonts */
 
-/* Font setting */
+/* Impostazione del font */
 body, h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: #21130d;
-    /* Set the font for the headings and the body text of the document */
+    /* Imposta il font per i titoli e il testo del corpo del documento */
 }
+
 
 /*-------------------------------------------------------------
 /* Color setup */
@@ -23,10 +24,7 @@ body, h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     z-index: -1;
-    /* Background set to be full screen and positioned below all content */
 }
-
-/* All the classes below are for different sections in the site, they are set to have different backgrounds */
 
 .home-background {
     background: url('/static/icons/landingpage_ecohotel.png') no-repeat center center fixed;
@@ -34,7 +32,6 @@ body, h1, h2, h3, h4, h5, h6 {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    /* Setting background image to cover entire element for the home section */
 }
 
 .insert_energy-background {
@@ -43,68 +40,171 @@ body, h1, h2, h3, h4, h5, h6 {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    /* Setting background image to cover entire element for the insert energy section */
 }
 
-/* This pattern is repeated for the other classes (access_control-background, energy_totals-background, energy-background, logout-background, login-background) */
+.access_control-background {
+    background: url('/static/icons/sfondo_link_accessi.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.energy_totals-background {
+    background: url('/static/icons/sfondo_link_energia_totale.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.energy-background {
+    background: url('/static/icons/sfondo_link_energia.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.logout-background {
+    background: url('/static/icons/sfondo_link_logout.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login-background {
+    background: url('/static/icons/sfondo_link_login.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 .navbar {
-    background-color: transparent !important; /* Use !important to override any other CSS rules */
-    box-shadow: none; /* Remove shadow */
-    border: none; /* Remove border */
+    background-color: transparent !important; /* Utilizza !important per sovrascrivere eventuali altre regole CSS */
+    box-shadow: none; /* Rimuove l'ombra */
+    border: none; /* Rimuove il bordo */
     padding: 2rem 6rem;
     display: flex;
     justify-content: space-between;
-    /* Set padding, display and space distribution between items in the navbar */
+    /* Imposta il padding, la visualizzazione e la distribuzione dello spazio tra gli elementi nella navbar */
 }
 
 .navbar-brand {
     margin-right: auto;
-    /* Set the right margin for the logo in the navbar */
+    /* Imposta il margine a destra per il logo nella navbar */
 }
 
 .navbar-nav {
     margin-left: auto;
-    /* Set the left margin for the items in the navbar */
+    /* Imposta il margine a sinistra per gli elementi nella navbar */
 }
 
 .navbar-nav .nav-link {
     margin-right: 41px;
     font-size: 16px;
     font-weight: bold;
-    /* Set the right margin and font size for the links in the navbar */
+    /* Imposta il margine destro e la dimensione del carattere per i link nella navbar */
 }
 
-/* Style for the active link in the navbar is set in the following classes (navbar-nav .nav-item.active .nav-link, navbar-nav .nav-item:nth-child(1).active .nav-link::before, navbar-nav .nav-item:nth-child(2).active .nav-link::before, navbar-nav .nav-item.active .nav-link::before, navbar-nav .nav-item.active .nav-link .custom-button:hover) */
+.nav-item.active .nav-link {
+
+    /* Imposta lo stile per il link attivo nella navbar */
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    font-weight: bold;
+    color: #21130d;
+    position: relative;
+}
+
+.navbar-nav .nav-item:nth-child(1).active .nav-link::before {
+    left: 6px;
+    width: 80%;
+    /* Imposta le coordinate specifiche per il primo link attivo */
+}
+
+.navbar-nav .nav-item:nth-child(2).active .nav-link::before {
+    left: 6px;
+    width: 84%;
+    /* Imposta le coordinate specifiche per il secondo link attivo */
+}
+
+.navbar-nav .nav-item.active .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 4px;
+    width: 93%;
+    height: 3px;
+    background-color: #21130d;
+    transform: translateY(-6px);
+}
+
+.navbar-nav .nav-item.active .nav-link .custom-button:hover {
+    background-color: transparent;
+    color: #21130d;
+    box-shadow: 8px 8px rgba(0, 0, 0, 0.2);
+}
 
 .container {
     max-width: 960px;
     margin: auto;
     text-align: center;
-    /* Set the maximum width, margin and text alignment for the containers */
+    /* Imposta la larghezza massima, il margine e l'allineamento del testo per i contenitori */
 }
 
 .table {
     width: 100%;
     color: #212529;
-    /* Set the width, bottom margin and text color for tables */
+    /* Imposta la larghezza, il margine inferiore e il colore del testo per le tabelle */
 }
 
-/* The table-container and table-container-energy classes set the maximum height and vertical scroll for the table container */
+.table,
+.table-container {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
 
-/* The following classes (.table th, .table td, table tr:last-child td, .energy_totals tbody tr:last-child th) set the padding, vertical alignment and bottom border style for table elements */
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    /* Imposta il padding, l'allineamento verticale */
+}
+
+.table-container {
+    max-height: 500px;
+    overflow-y: auto;
+    /* Imposta l'altezza massima e lo scroll verticale per la tabella contenitore */
+}
+
+.table-container-energy {
+    height: 550px !important;
+    overflow-y: auto !important;
+    max-height: 500px !important;
+    /* Imposta l'altezza massima e lo scroll verticale per la tabella contenitore */
+}
+
+table tr:last-child td {
+    border-bottom-style: none !important;
+}
+
+.energy_totals tbody tr:last-child th {
+    border-bottom-style: none !important;
+}
 
 .truncate-text {
   max-width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  /* Text truncation styling */
 }
 
 .copy-text {
   cursor: pointer;
-  /* Cursor turns into pointer (hand) on hover, indicating clickable text */
 }
 
 .btn {
@@ -112,26 +212,52 @@ body, h1, h2, h3, h4, h5, h6 {
     background-color: #B7EF83;
     border: none;
     text-decoration: none;
-    /* Set the padding, background and text colors, borders and text decoration for buttons */
+    /* Imposta il padding, i colori di sfondo e del testo, i bordi e la decorazione del testo per i pulsanti */
 }
 
 .btn:hover {
     background-color: #63E432;
-    /* Set the background color when the cursor hovers over the buttons */
+    /* Imposta il colore di sfondo quando il cursore passa sopra ai pulsanti */
 }
 
-/* The following classes (.custom-button, .custom-button::before, .custom-button:hover::before) define the styling for a custom button, its hover effect and a pseudo-element before the button */
+.custom-button {
+    background-color: transparent;
+    color: #21130d;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.custom-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+    transform: translateY(100%);
+    transition: transform 0.3s;
+    color: #21130d;
+}
+
+.custom-button:hover::before {
+    color: #21130d;
+    transform: translateY(0);
+    background-color: transparent;
+}
 
 .alert {
     padding: 20px;
     color: #fff;
     background-color: #f44336;
     margin-bottom: 15px;
-    /* Set the padding, background and text colors, and bottom margin for alerts */
+    /* Imposta il padding, i colori di sfondo e del testo, e il margine inferiore per gli avvisi */
 }
 
 .custom-margin {
-  margin-top: 70px; /* Set the desired top margin */
+  margin-top: 70px; /* Imposta il margine superiore desiderato */
 }
 
 .title {
@@ -154,7 +280,6 @@ body, h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* Styling for the login container */
 }
 
 .login-container .login-form {
@@ -166,20 +291,20 @@ body, h1, h2, h3, h4, h5, h6 {
     padding: 50px;
     flex-direction: column;
     align-items: center;
-    /* Styling for the login form within the login container */
 }
 
 .login-container h2 {
   font-size: 2em;
   color: #162938;
   margin-bottom: 70px;
-  margin-top: 0; /* Remove top spacing for the title */
+  margin-top: 0; /* Rimuovi la spaziatura superiore per il titolo */
+
 }
 
 .login-container .login-form h2 {
     font-size: 2em;
     color: #162938;
-    margin-top: -10px; /* Add a top spacing to separate the title from the form */
+    margin-top: -10px; /* Aggiungi una spaziatura superiore per separare il titolo dalla form */
 }
 
 .form-group {
@@ -198,5 +323,6 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .copy-text:hover {
   color: blue;
-  /* Styling for the text to be copied, underline it and change its color to blue on hover */
 }
+
+

@@ -1,8 +1,6 @@
-# Ecohotel
+# Ecohotel | Progetto Django di Riccardo Badanai
 Start2Impact |
 [Presentazione progetto Django & Redis.pdf](https://github.com/rickybada/ecohotel/files/11763379/Presentazione.progetto.Django.Redis.pdf)
-
-# Progetto Django di Riccardo Badanai
 
 ## Descrizione del Progetto
 Questo progetto utilizza Django e Redis per creare un'applicazione web focalizzata sulla gestione dei dati energetici. La presentazione dettagliata del progetto è disponibile nel file [PDF](https://github.com/rickybada/ecohotel/files/11763379/Presentazione.progetto.Django.Redis.pdf) incluso.

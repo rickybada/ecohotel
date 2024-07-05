@@ -13,7 +13,7 @@ Questo progetto utilizza Django e Redis per creare un'applicazione web focalizza
 ## Installazione
 1. Clona il repository:
     ```bash
-    git clone <link-al-tuo-repository>
+    git clone https://github.com/rickybada/ecohotel.git
     ```
 2. Naviga nella directory del progetto:
     ```bash
